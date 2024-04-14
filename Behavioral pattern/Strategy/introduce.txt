@@ -2,6 +2,41 @@
 Strategy is a behavioral design pattern that lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable.
 
 ** PROBLEM
+- You want to build a routing application
+- Increase type of vehicles
+- Any change to one of the algorithms, whether it was a simple bug fix or a slight adjustment of the street score, affected the whole class, 
+increasing the chance of creating an error in already-working code.
+- Implementing a new feature requires you to change the same huge class, conflicting with the code produced by other people.
+
+** SOLUTION
+- The Strategy pattern suggests that you take a class that does something specific in a lot of different ways and extract all of these algorithms 
+into separate classes called strategies.
+- The context have a instance of strategy algorithms and do not know much about algorithms implementation
+- Only have an interface to call
+- Client pass appropriate instance to context to use
+
+** APPLICATION
+- When you want to use different variants of an algorithm within an object and be able to switch from one algorithm to another during runtime.
+- When you have a lot of similar classes that only differ in the way they execute some behavior.
+- Use the pattern to isolate the business logic of a class from the implementation details of algorithms that may not be as important in the context of that logic.
+- Use the pattern when your class has a massive conditional statement that switches between different variants of the same algorithm.
+
+** PROS - CONS
+-V- You can swap algorithms used inside an object at runtime.
+-V- You can isolate the implementation details of an algorithm from the code that uses it.
+-V- You can replace inheritance with composition.
+-V- Open/Closed Principle. You can introduce new strategies without having to change the context.
+
+-X- If you only have a couple of algorithms and they rarely change, there’s no real reason to overcomplicate the program with new classes and interfaces that come along with the pattern.
+-X- Clients must be aware of the differences between strategies to be able to select a proper one
+-X- A lot of modern programming languages have functional type support that lets you implement different versions of an algorithm inside a set of anonymous functions. Then you could use these functions exactly as you’d have used the strategy objects, but without bloating your code with extra classes and interfaces.
+
+** INDENTIFICATION
+- Strategy pattern can be recognized by a method that lets a nested object do the actual work
+- A setter that allows replacing that object with a different one.
 
 ** Reference
 https://refactoring.guru/design-patterns/strategy
+
+** COMPLEXITY:  *
+** POPULARITY:  * * *

@@ -1,0 +1,33 @@
+** INTENT
+Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+
+** PROBLEM
+- You are creating a logistics management application.
+- The first version can only handle transportation by trucks, so bulk of your code lives inside the Truck class.
+- Adding Ships into the app would require making changes to the entire codebase.
+
+** SOLUTION
+- The Factory Method pattern suggests that you replace direct object construction calls (using the new operator) with calls to a special factory method
+- Now you can override the factory method in a subclass and change the class of products being created by the method.
+
+** APPLICATION
+- When you don’t know beforehand the exact types and dependencies of the objects your code should work with.
+- When you want to provide users of your library or framework with a way to extend its internal components.
+- When you want to save system resources by reusing existing objects instead of rebuilding them each time.
+
+** PROS - CONS
+-V- You avoid tight coupling between the creator and the concrete products.
+-V- Single Responsibility Principle. You can move the product creation code into one place in the program, making the code easier to support.
+-V- Open/Closed Principle. You can introduce new types of products into the program without breaking existing client code.
+
+-X- The code may become more complicated since you need to introduce a lot of new subclasses to implement the pattern. The best case scenario is when you’re introducing the pattern into an existing hierarchy of creator classes.
+
+** INDENTIFICATION
+- Factory methods can be recognized by creation methods that construct objects from concrete classes. 
+- While concrete classes are used during the object creation, the return type of the factory methods is usually declared as either an abstract class or an interface.
+
+** Reference
+https://refactoring.guru/design-patterns/factory-method
+
+** COMPLEXITY:  *
+** POPULARITY:  * * *
