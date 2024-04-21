@@ -1,0 +1,32 @@
+** INTENT
+Adapter is a structural design pattern that allows objects with incompatible interfaces to collaborate.
+
+** PROBLEM
+- You’re creating a stock market monitoring app. 
+- The app downloads the stock data from multiple sources in XML format and then displays
+- At some point, you decide to improve the app by integrating a smart 3rd-party analytics only works with data in JSON format.
+- You could change the library to work with XML. However, this might break some existing code that relies on the library. 
+
+** SOLUTION
+- You can create an adapter. This is a special object that converts the interface of one object so that another object can understand it.
+- Adapters can not only convert data into various formats but can also help objects with different interfaces collaborate.
+
+** APPLICATION
+- Use the Adapter class when you want to use some existing class, but its interface isn’t compatible with the rest of your code.
+- When you want to reuse several existing subclasses that lack some common functionality that can’t be added to the superclass. (similar to Decorator pattern)
+
+** PROS - CONS
+-V- Single Responsibility Principle. You can separate the interface or data conversion code from the primary business logic of the program.
+-V- Open/Closed Principle. You can introduce new types of adapters into the program without breaking the existing client code, as long as they work with the adapters through the client interface.
+
+-X-  The overall complexity of the code increases because you need to introduce a set of new interfaces and classes. Sometimes it’s simpler just to change the service class so that it matches the rest of your code.
+
+** INDENTIFICATION
+- Adapter is recognizable by a constructor which takes an instance of a different abstract/interface type. 
+- When the adapter receives a call to any of its methods, it translates parameters to the appropriate format and then directs the call to one or several methods of the wrapped object.
+
+** Reference
+https://refactoring.guru/design-patterns/adapter
+
+** COMPLEXITY:  *
+** POPULARITY:  * * *
