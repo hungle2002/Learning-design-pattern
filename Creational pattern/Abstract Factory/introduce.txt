@@ -1,0 +1,38 @@
+** INTENT
+Abstract Factory is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
+
+** PROBLEM
+- You’re creating a furniture shop simulator. Your code consists of classes that represent:
+- Several variants of this family. For example, products Chair + Sofa + CoffeeTable are available in these variants: Modern, Victorian, ArtDeco.
+- You need a way to create individual furniture objects so that they match other objects of the same family.
+
+** SOLUTION
+- Firstly, explicitly declare interfaces for each distinct product of the product family (e.g., chair, sofa or coffee table)
+- Then you can make all variants of products follow those interfaces
+- The next move is to declare the Abstract Factory—an interface with a list of creation methods for all products that are part of the product family (for example, 
+createChair, createSofa and createCoffeeTable). 
+-  For each variant of a product family, we create a separate factory class based on the AbstractFactory interface. A factory is a class that returns products of 
+a particular kind. 
+
+** APPLICATION
+- When your code needs to work with various families of related products, but you don’t want it to depend on the concrete classes of those products—they 
+might be unknown beforehand or you simply want to allow for future extensibility.
+- Consider implementing the Abstract Factory when you have a class with a set of Factory Methods that blur its primary responsibility.
+
+** PROS - CONS
+-V- You can be sure that the products you’re getting from a factory are compatible with each other.
+-V- You avoid tight coupling between concrete products and client code.
+-V- Single Responsibility Principle. You can extract the product creation code into one place, making the code easier to support.
+-V- Open/Closed Principle. You can introduce new variants of products without breaking existing client code.
+
+-X- The code may become more complicated than it should be, since a lot of new interfaces and classes are introduced along with the pattern.
+
+** INDENTIFICATION
+- The pattern is easy to recognize by methods, which return a factory object. 
+- Then, the factory is used for creating specific sub-components.
+
+** Reference
+https://refactoring.guru/design-patterns/abstract-factory
+
+** COMPLEXITY:  **
+** POPULARITY:  * * *
