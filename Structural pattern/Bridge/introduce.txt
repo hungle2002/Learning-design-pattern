@@ -1,0 +1,37 @@
+** INTENT
+Bridge is a structural design pattern that lets you split a large class or a set of closely related classes into two separate hierarchies—abstraction 
+and implementation—which can be developed independently of each other.
+
+** PROBLEM
+- You have a geometric Shape class with a pair of subclasses: Circle and Square. 
+- You want to extend this class hierarchy to incorporate colors, so you plan to create Red and Blue shape subclasses. You’ll need to create four 
+class combinations such as BlueCircle and RedSquare.
+- Adding new shape types and colors to the hierarchy will grow it exponentially. 
+
+** SOLUTION
+- This problem occurs because we’re trying to extend the shape classes in two independent dimensions: by form and by color (class inheritance).
+- The Bridge pattern attempts to solve this problem by switching from inheritance to the object composition. 
+- You extract one of the dimensions into a separate class hierarchy, so that the original classes will reference an object of the new hierarchy
+
+** APPLICATION
+-  Use the Bridge pattern when you want to divide and organize a monolithic class that has several variants of some functionality 
+(for example, if the class can work with various database servers).
+- When you need to extend a class in several orthogonal (independent) dimensions.
+- Use the Bridge if you need to be able to switch implementations at runtime.
+
+** PROS - CONS
+-V- You can create platform-independent classes and apps.
+-V- The client code works with high-level abstractions. It isn’t exposed to the platform details.
+-V- Open/Closed Principle. You can introduce new abstractions and implementations independently from each other.
+-V- Single Responsibility Principle. You can focus on high-level logic in the abstraction and on platform details in the implementation.
+
+-X-  You might make the code more complicated by applying the pattern to a highly cohesive class.
+
+** INDENTIFICATION
+- Bridge can be recognized by a clear distinction between some controlling entity and several different platforms that it relies on.
+
+** Reference
+https://refactoring.guru/design-patterns/adapter
+
+** COMPLEXITY:  * * *
+** POPULARITY:  *
